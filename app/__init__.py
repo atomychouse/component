@@ -3,12 +3,10 @@ from flask import (
     jsonify, 
     render_template,
     request)
-
-from flask_sqlalchemy import SQLAlchemy
 import os
 import json
-import pandas as pd
 import mimetypes
+from utils.DIDreader import DIDReader
 
 ROOT_DIR = os.path.abspath(os.getcwd())
 
@@ -21,7 +19,12 @@ class Pratto:
             ]
         return []
 
+
+
+
 pratto_actions = Pratto()
+did_actions = DIDReader(filepath='itself')
+
 app = Flask(
     __name__, 
     template_folder = "templates",
@@ -38,6 +41,7 @@ def initial():
 
 @app.route('/load_fts/', methods = ['POST'])
 def load_fts():
+    assert False, did_actions.get_nodes()
     applies = [
         "MY25 S832 Gold",
         "MY25 CX720 ",
