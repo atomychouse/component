@@ -23,7 +23,6 @@ class Pratto:
 
 
 pratto_actions = Pratto()
-did_actions = DIDReader(filepath='itself')
 
 app = Flask(
     __name__, 
@@ -41,7 +40,12 @@ def initial():
 
 @app.route('/load_fts/', methods = ['POST'])
 def load_fts():
-    assert False, did_actions.get_nodes()
+    mdx = request.files["mdx"]
+    did_class = DIDReader(mdx)
+    did_class.read_mdx()
+    de00 = did_class.get_config(config='de01')
+    serie = did_class.get_bus(de00)
+    assert False, serie
     applies = [
         "MY25 S832 Gold",
         "MY25 CX720 ",
