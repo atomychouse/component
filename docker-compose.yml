@@ -1,0 +1,12 @@
+services:
+  flaskapp: 
+    image: component
+    container_name: component
+    environment:
+      - FLASK_APP=run.py
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/app
+
+

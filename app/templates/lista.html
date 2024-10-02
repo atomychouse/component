@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <style>
+        .here li{
+                border:1px dotted #ccc;
+                padding:10px 5px;
+        }
+    </style>
+
+    <h1>Apply for programs</h1>
+    <ul class="verticaly">
+        <form action="/fts" method="post">
+        {% for a in applies %}
+            <li>
+                <h3>{{a}}</h3>
+                <div>Add files</div>
+                <div>
+                    <ul>
+                        <li>
+                            <label>Key</label>
+                            <input type="file">
+                        </li>
+                        <li>
+                            <label>EDC</label>
+                            <input type="file">
+                        </li>
+                        <li>
+                            <label>DBC</label>
+                            <input type="file">
+                        </li>
+                    </ul>
+                </div>
+                <div style="text-align: right;background-color: #ccc;padding: 10px 5px;border-radius: 10px;"><button type="submit">Continue</button></div>
+            </li>
+
+        {% endfor %}
+    </form>
+    </ul>
+{% endblock body%}

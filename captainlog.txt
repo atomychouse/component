@@ -1,0 +1,21 @@
+DJANGO 
+
+    contains frontend and backend in the same environment so we have a monolitic thing 
+    but what if:
+
+    create a frontend app to serve frontend
+    and a backend to work as microservice so we can decople frontend if we do not what it or create a more specialist development
+
+FLASK 
+    microservices and a light module, but we need more setups, DJANGO IS NOT ALLOWED, SO WE START WITH THIS thing
+    vue
+    html
+    bootstrap
+
+
+
+02-OCT
+
+We must use flask as server side , html/jquery/reactjs for frontend (user interfaces), this because we need a light artefact to better distribution
+
+the use a docker as a development environment is a must to avoid issues in versions/different platforms of developers

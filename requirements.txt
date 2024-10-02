@@ -1,0 +1,10 @@
+flask==3.0.3
+flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.32
+xlrd
+openpyxl
+python-can
+python-uds
+cantools
+numpy
+pandas

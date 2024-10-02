@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <style>
+        .here li{
+                border:1px dotted #ccc;
+                padding:10px 5px;
+        }
+
+        .tables div{
+            display: inline-block;
+            border:1px solid #ccc;
+        }
+    </style>
+
+    <h1>TCS</h1>
+    <div style="width: 85%;">
+        <div style="text-align: right;">
+            <button type="button">RUN TESTCASES</button>
+        </div>
+    </div>
+    <ul >
+        {% for t in total%}
+        <li class="tables">
+            {% for c in t %}
+            <div>
+                <p>{{c[0]}}</p>
+                <hr>
+                <p style="text-align: center;background-color: #ccc;">{{c[1]}}</p>
+            </div>
+            {% endfor %}
+            <div>
+                <p>RUN SINGLE</p>
+                <hr>
+                <button type="button">RUN {{loop.index0}}</button>
+            </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock body%}
